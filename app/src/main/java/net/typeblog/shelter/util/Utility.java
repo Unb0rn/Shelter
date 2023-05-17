@@ -228,6 +228,11 @@ public class Utility {
         manager.setCrossProfileContactsSearchDisabled(adminComponent,
                 SettingsManager.getInstance().getBlockContactsSearchingEnabled());
 
+        //setCrossProfileCalendarPackages is deprecated since upsideDownCake - have to add Android Auto(com.google.android.projection.gearhead)
+        manager.setCrossProfileCalendarPackages(adminComponent, null);
+        // We need more hardcode =) Also, ToDo - understand which flags do the packages with crossprofile capability have and add more to this whitelist (like GBoard?)
+        manager.setCrossProfilePackages(adminComponent, Set.of("com.google.android.projection.gearhead"));
+
         manager.setProfileEnabled(adminComponent);
     }
 
